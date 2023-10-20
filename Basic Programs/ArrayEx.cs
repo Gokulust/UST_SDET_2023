@@ -43,33 +43,34 @@ namespace Basic_Programs
         }
         public void jaggered()
         {
-            int[][,] arr= new int[][,]
+            int[][,] arr = new int[][,]
             {
                 new int[,] { { 1, 2, } },
                 new int[,] { { 1, 2, 3 }, { 3, 4, 5 }, { 3, 5, 6 } }
             };
-            foreach(var item in arr)
+            foreach (var item in arr)
             {
                 Console.WriteLine("***");
-                foreach(var number in item)
+                foreach (var number in item)
                 {
                     Console.WriteLine(number);
                 }
             }
-            for(int i=0;i<arr.Length;i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 int x = 0
 ;
-                for (int j = 0; j < arr[i].GetLength(x) ;j++ )
+                for (int j = 0; j < arr[i].GetLength(x); j++)
                 {
-                    for(int k = 0; k < arr[j].Rank;k++)
+                    for (int k = 0; k < arr[j].Rank; k++)
                     {
-                        Console.Write(arr[i][j,k]+" ");
+                        Console.Write(arr[i][j, k] + " ");
                     }
                     Console.WriteLine();
                 }
                 x++;
                 Console.WriteLine();
+            }
         }
         
     }
