@@ -10,5 +10,13 @@ using Basic_Programs;
 //result = calculation.Add(numberOne, numberTwo);
 //Console.WriteLine($"{numberOne}+{numberTwo}={result}");
 
-Electricity electricity=new Electricity(12345,8000,8300,"gokul");
-Console.WriteLine(electricity.CalculateBill());
+//Electricity electricity=new Electricity(12345,8000,8300,"gokul");
+//Console.WriteLine(electricity.CalculateBill());
+//Employee employee=new Employee(249214,"gokul","IT",8000);
+//Console.WriteLine(employee.EmpolyeeId);
+//Console.WriteLine(employee.EmployeeName);
+//Console.WriteLine(employee.GetSalary());
+ArrayEx arrayEx = new ArrayEx();
+arrayEx.OneDim();
+arrayEx.TwoDim();
+arrayEx.jaggered();
