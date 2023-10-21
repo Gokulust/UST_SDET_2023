@@ -66,10 +66,17 @@ using Basic_Programs;
     
 //}
 
-ElectricVehicle electricVehicle = new ElectricVehicle();
-electricVehicle.Vehnum = 100;
-electricVehicle.Model = "xxxx";
-electricVehicle.Brand = "AA";
-Console.WriteLine(electricVehicle.setTypeForVeh());
+//ElectricVehicle electricVehicle = new ElectricVehicle();
+//electricVehicle.Vehnum = 100;
+//electricVehicle.Model = "xxxx";
+//electricVehicle.Brand = "AA";
+//Console.WriteLine(electricVehicle.setTypeForVeh());
 
+//21-10-2023
+
+Doctor doctor = new Doctor();
+doctor.AddNewDoctor();
+doctor.DisplayDoctorDetails();
+doctor.BookAppointment(9087, "vishnu");
+doctor.DeleteAppointment("vyshnav");
 

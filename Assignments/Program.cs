@@ -49,3 +49,4 @@ ClothingProduct CP = new ClothingProduct("L", "T-shirt", 12000, 4);
 Console.WriteLine(DP.ProductValue());
 Console.WriteLine(CP.ProductValue());
 Console.WriteLine(EP.ProductValue());
+
