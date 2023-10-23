@@ -59,11 +59,11 @@ using Basic_Programs;
 //        nonTeachingStaff.DisplayStaffDetails();
 //        nonTeachingStaff.DisplayNonTeachingStaffDetails();
 //        break;
-       
 
 
 
-    
+
+
 //}
 
 //ElectricVehicle electricVehicle = new ElectricVehicle();
@@ -74,9 +74,35 @@ using Basic_Programs;
 
 //21-10-2023
 
-Doctor doctor = new Doctor();
-doctor.AddNewDoctor();
-doctor.DisplayDoctorDetails();
-doctor.BookAppointment(9087, "vishnu");
-doctor.DeleteAppointment("vyshnav");
+//Doctor doctor = new Doctor();
+//doctor.AddNewDoctor();
+//doctor.DisplayDoctorDetails();
+//doctor.BookAppointment(9087, "vishnu");
+//doctor.DeleteAppointment("vyshnav");
+
+//23-10-2023
+Bank bank1 = new BankDetailsNew(249214,678934567L, "Gokul", "Active");
+//Bank bank1 = new Bank();
+bank1.WelcomeMessage();
+Console.WriteLine("1.Customer Id 2.Account Number 3.Name");
+int ch=Convert.ToInt32(Console.ReadLine());
+switch(ch)
+{
+    case 1:
+        Console.WriteLine("Enter the customer Id: ");
+        bank1.GetAccountDetails(Convert.ToInt32(Console.ReadLine()));
+        break;
+    case 2:
+        Console.WriteLine("Enter the Account Number :");
+        bank1.GetAccountDetails(Convert.ToInt64(Console.ReadLine()));
+        break;
+    case 3:
+        Console.WriteLine("Enter the Name");
+        bank1.GetAccountDetails(Console.ReadLine());
+        break;
+}
+bank1.GetAccountDetails("Gokul");
+bank1.GetAccountDetails(249214);
+bank1.GetAccountDetails(678934567L);
+
 

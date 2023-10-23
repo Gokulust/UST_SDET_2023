@@ -13,7 +13,6 @@ while (n == 1)
     switch (Convert.ToInt32(Console.ReadLine()))
     {
         case 1:
-            
             AddBook();
             break;
         case 2:

@@ -36,17 +36,31 @@ using Assignments;
 
 //20-10-2023
 
-ElectronicsProducts EP = new ElectronicsProducts(12, "Refrigerator", 30000, 2);
-EP.DisplayWarrantyPeriod();
-Console.WriteLine(EP.ProductValue());
+//ElectronicsProducts EP = new ElectronicsProducts(12, "Refrigerator", 30000, 2);
+//EP.DisplayWarrantyPeriod();
+//Console.WriteLine(EP.ProductValue());
 
-DigitalProduct DP = new DigitalProduct("jpg", 12, "Image", 30000, 2);
-DP.DisplayWarrantyPeriod();
-DP.DisplayFileFormat();
-Console.WriteLine(DP.ProductValue());
+//DigitalProduct DP = new DigitalProduct("jpg", 12, "Image", 30000, 2);
+//DP.DisplayWarrantyPeriod();
+//DP.DisplayFileFormat();
+//Console.WriteLine(DP.ProductValue());
 
-ClothingProduct CP = new ClothingProduct("L", "T-shirt", 12000, 4);
-Console.WriteLine(DP.ProductValue());
-Console.WriteLine(CP.ProductValue());
-Console.WriteLine(EP.ProductValue());
+//ClothingProduct CP = new ClothingProduct("L", "T-shirt", 12000, 4);
+//Console.WriteLine(DP.ProductValue());
+//Console.WriteLine(CP.ProductValue());
+//Console.WriteLine(EP.ProductValue());
+
+//23-10-2023
+
+Employee employee = new("Gokul", "Raj", 18, 249214);
+employee.DisplayInfo();
+
+Circle circle = new Circle();
+circle.Radius = 10;
+circle.Draw();
+
+Rectangle rectangle = new Rectangle();
+rectangle.Width = 10;
+rectangle.Length = 10;
+rectangle.Draw();
 
