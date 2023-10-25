@@ -52,15 +52,26 @@ using Assignments;
 
 //23-10-2023
 
-Employee employee = new("Gokul", "Raj", 18, 249214);
-employee.DisplayInfo();
 
-Circle circle = new Circle();
-circle.Radius = 10;
-circle.Draw();
+//25-10-2023
 
-Rectangle rectangle = new Rectangle();
-rectangle.Width = 10;
-rectangle.Length = 10;
-rectangle.Draw();
+InsurancePolicy insurancePolicy = new("Life", 2198, 10000);
+insurancePolicy.RenewPolicy();
+insurancePolicy.DisplayRenewdAmount();
+insurancePolicy.RenewPolicy(20000);
+insurancePolicy.DisplayRenewdAmount();
 
+LifeInsurance lifeInsurance = new LifeInsurance("Gokul",24);
+lifeInsurance.PolicyName = "tcs";
+lifeInsurance.PolicyId = 324;
+lifeInsurance.PremiumAmount = 24000;
+Console.WriteLine("Sanctioned amount: {0}",lifeInsurance.CalculatePermium());
+
+CarInsurance carInsurance = new CarInsurance();
+carInsurance.PolicyName = "Sbi";
+carInsurance.PolicyId = 9086;
+carInsurance.PremiumAmount = 60000;
+carInsurance.CustomerName = "shirin";
+carInsurance.VehicleType = "scooter";
+carInsurance.KilometerUsed = 9000;
+Console.WriteLine("Sanctioned amount: {0}", lifeInsurance.CalculatePermium());
