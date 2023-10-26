@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Basic_Programs;
+using Basic_Programs.ExceptionMessages;
 
 //18-10-2023
 
@@ -108,15 +109,34 @@ using Basic_Programs;
 
 //25-10-2023
 
-NonGeneric nonGeneric = new NonGeneric();
-nonGeneric.ArrayListHandling();
-nonGeneric.StackHandling();
-nonGeneric.QueueHandling();
-nonGeneric.HashTableHandling();
+//NonGeneric nonGeneric = new NonGeneric();
+//nonGeneric.ArrayListHandling();
+//nonGeneric.StackHandling();
+//nonGeneric.QueueHandling();
+//nonGeneric.HashTableHandling();
 
-Generic generic = new Generic();
-generic.ArrayListHandling();
-generic.StackHandling();
-generic.QueueHandling();
-generic.DictionaryHandling();
+//Generic generic = new Generic();
+//generic.ArrayListHandling();
+//generic.StackHandling();
+//generic.QueueHandling();
+//generic.DictionaryHandling();
 
+//26-10-2023
+
+ExceptionHandling exceptionHandling = new ExceptionHandling();
+exceptionHandling.NumberOne = 20;
+exceptionHandling.NumberTwo=0;
+exceptionHandling.Divide();
+
+try
+{
+    exceptionHandling.NumCheck();
+}
+catch(ArgumentException ex)
+{
+    Console.WriteLine(MyException.exMessagesList[4]);
+}
+catch(NumberOneException ex)
+{
+    Console.WriteLine(ex.Message);
+}

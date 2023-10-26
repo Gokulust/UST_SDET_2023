@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Assignments;
+using Assignments.ExceptionMessage;
 
 //Console.WriteLine("Enter the student name:");
 //string? studentName=Console.ReadLine();
@@ -52,26 +53,70 @@ using Assignments;
 
 //23-10-2023
 
+//Employee employee = new("Gokul", "Raj", 18, 249214);
+//employee.DisplayInfo();
+
+//Circle circle = new Circle();
+//circle.Radius = 10;
+//circle.Draw();
+
+//Rectangle rectangle = new Rectangle();
+//rectangle.Width = 10;
+//rectangle.Length = 10;
+//rectangle.Draw();
 
 //25-10-2023
 
-InsurancePolicy insurancePolicy = new("Life", 2198, 10000);
-insurancePolicy.RenewPolicy();
-insurancePolicy.DisplayRenewdAmount();
-insurancePolicy.RenewPolicy(20000);
-insurancePolicy.DisplayRenewdAmount();
+//InsurancePolicy insurancePolicy = new("Life", 2198, 10000);
+//insurancePolicy.RenewPolicy();
+//insurancePolicy.DisplayRenewdAmount();
+//insurancePolicy.RenewPolicy(20000);
+//insurancePolicy.DisplayRenewdAmount();
 
-LifeInsurance lifeInsurance = new LifeInsurance("Gokul",24);
-lifeInsurance.PolicyName = "tcs";
-lifeInsurance.PolicyId = 324;
-lifeInsurance.PremiumAmount = 24000;
-Console.WriteLine("Sanctioned amount: {0}",lifeInsurance.CalculatePermium());
+//LifeInsurance lifeInsurance = new LifeInsurance("Gokul", 24);
+//lifeInsurance.PolicyName = "tcs";
+//lifeInsurance.PolicyId = 324;
+//lifeInsurance.PremiumAmount = 24000;
+//Console.WriteLine("Sanctioned amount: {0}", lifeInsurance.CalculatePermium());
 
-CarInsurance carInsurance = new CarInsurance();
-carInsurance.PolicyName = "Sbi";
-carInsurance.PolicyId = 9086;
-carInsurance.PremiumAmount = 60000;
-carInsurance.CustomerName = "shirin";
-carInsurance.VehicleType = "scooter";
-carInsurance.KilometerUsed = 9000;
-Console.WriteLine("Sanctioned amount: {0}", lifeInsurance.CalculatePermium());
+//CarInsurance carInsurance = new CarInsurance();
+//carInsurance.PolicyName = "Sbi";
+//carInsurance.PolicyId = 9086;
+//carInsurance.PremiumAmount = 60000;
+//carInsurance.CustomerName = "shirin";
+//carInsurance.VehicleType = "scooter";
+//carInsurance.KilometerUsed = 9000;
+//Console.WriteLine("Sanctioned amount: {0}", lifeInsurance.CalculatePermium());
+
+//26-10-2023
+
+Customer customer = new(249213, "Gokul",735674989, 498);
+Customer customer2 = new(4567, "shirin", 679856347, 66);
+Customer customer3 = new(8976, "vishnu", 897653726, 121);
+Customer.CustomerList.Add(customer);
+Customer.CustomerList.Add(customer2);
+Customer.CustomerList.Add(customer3);
+Customer.GetCustomerByPhoneNumber(735674989);
+Customer.DisplayAllCustomer();
+Customer.GetCustomerByPhoneNumber(98767);
+
+CallRecords callRecordOne = new(567, 7356749899, 8.5);
+CallRecords callRecordTwo = new(987, 7356749899, 9.8);
+CallRecords callRecordThree = new(786, 9895302408, 7.24);
+CallRecords callRecordFour = new(786, 9895302408, 6.7);
+CallRecords.CallRecordsList.Add(callRecordOne);
+CallRecords.CallRecordsList.Add(callRecordTwo);
+CallRecords.CallRecordsList.Add((callRecordThree));
+CallRecords.CallRecordsList.Add((callRecordFour));
+CallRecords.GetCallRecord(7356749899);
+CallRecords.GetAllCallCountByPhoneNumber();
+try
+{
+    Patient.AddPatients(8765, "gokul", 24, "fever");
+}
+catch(CustomException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+Patient.Display();
