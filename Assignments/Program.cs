@@ -113,6 +113,7 @@ CallRecords.GetAllCallCountByPhoneNumber();
 try
 {
     Patient.AddPatients(8765, "gokul", 24, "fever");
+    Patient.AddPatients(9088, "", 45, "fever");
 }
 catch(CustomException ex)
 {
