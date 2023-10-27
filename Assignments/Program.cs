@@ -90,34 +90,75 @@ using Assignments.ExceptionMessage;
 
 //26-10-2023
 
-Customer customer = new(249213, "Gokul",735674989, 498);
-Customer customer2 = new(4567, "shirin", 679856347, 66);
-Customer customer3 = new(8976, "vishnu", 897653726, 121);
-Customer.CustomerList.Add(customer);
-Customer.CustomerList.Add(customer2);
-Customer.CustomerList.Add(customer3);
-Customer.GetCustomerByPhoneNumber(735674989);
-Customer.DisplayAllCustomer();
-Customer.GetCustomerByPhoneNumber(98767);
+//Customer customer = new(249213, "Gokul",735674989, 498);
+//Customer customer2 = new(4567, "shirin", 679856347, 66);
+//Customer customer3 = new(8976, "vishnu", 897653726, 121);
+//Customer.CustomerList.Add(customer);
+//Customer.CustomerList.Add(customer2);
+//Customer.CustomerList.Add(customer3);
+//Customer.GetCustomerByPhoneNumber(735674989);
+//Customer.DisplayAllCustomer();
+//Customer.GetCustomerByPhoneNumber(98767);
 
-CallRecords callRecordOne = new(567, 7356749899, 8.5);
-CallRecords callRecordTwo = new(987, 7356749899, 9.8);
-CallRecords callRecordThree = new(786, 9895302408, 7.24);
-CallRecords callRecordFour = new(786, 9895302408, 6.7);
-CallRecords.CallRecordsList.Add(callRecordOne);
-CallRecords.CallRecordsList.Add(callRecordTwo);
-CallRecords.CallRecordsList.Add((callRecordThree));
-CallRecords.CallRecordsList.Add((callRecordFour));
-CallRecords.GetCallRecord(7356749899);
-CallRecords.GetAllCallCountByPhoneNumber();
+//CallRecords callRecordOne = new(567, 7356749899, 8.5);
+//CallRecords callRecordTwo = new(987, 7356749899, 9.8);
+//CallRecords callRecordThree = new(786, 9895302408, 7.24);
+//CallRecords callRecordFour = new(786, 9895302408, 6.7);
+//CallRecords.CallRecordsList.Add(callRecordOne);
+//CallRecords.CallRecordsList.Add(callRecordTwo);
+//CallRecords.CallRecordsList.Add((callRecordThree));
+//CallRecords.CallRecordsList.Add((callRecordFour));
+//CallRecords.GetCallRecord(7356749899);
+//CallRecords.GetAllCallCountByPhoneNumber();
+//try
+//{
+//    Patient.AddPatients(8765, "gokul", 24, "fever");
+//    Patient.AddPatients(9088, "", 45, "fever");
+//}
+//catch(CustomException ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+
+//Patient.Display();
+
+//27-10-2023
+
+MedicalRecord medicalRecord = new MedicalRecord(123,"gokul",30,"fever",12,100);
+
 try
 {
-    Patient.AddPatients(8765, "gokul", 24, "fever");
-    Patient.AddPatients(9088, "", 45, "fever");
+    MedicalRecord.AddMedicalRecord(medicalRecord);
 }
-catch(CustomException ex)
+catch (CustomException ex)
 {
-    Console.WriteLine(ex.Message);
+    Console.Write(ex.Message);
 }
+int n = 1;
 
-Patient.Display();
+while (n == 1)
+{
+    Console.WriteLine("1.Add Medical Record 2.View Medical Record Details");
+    int choice = Convert.ToInt32(Console.ReadLine());
+    switch (choice)
+    {
+        case 1:
+            Console.WriteLine("Enter the Reord id:");
+            int recordId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the Patient id:");
+            int patientid = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the Description:");
+            string description = Console.ReadLine();
+            Console.WriteLine("Enter the Time:");
+            double Time = Convert.ToDouble(Console.ReadLine());
+            MedicalHistory medicalHistory=new(recordId,patientid, description, Time);
+            MedicalHistory.AddMedicalRecord(medicalHistory);
+            medicalHistory.WriteMedicalRecordDetailsToFile();
+            break;
+        case 2:
+            MedicalHistory.DisplayMedicalHistoryDetailsFromFile();
+            break;
+    }
+    Console.WriteLine("Press 1 to contine");
+    choice = Convert.ToInt32(Console.ReadLine());
+}

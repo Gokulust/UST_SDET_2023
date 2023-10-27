@@ -16,30 +16,42 @@ namespace Assignments
 
         public string? Diagonsis { get; set; }
 
-        public static List<Patient> PatientList = new List<Patient>(); 
+        public static List<Patient> PatientList = new List<Patient>();
 
-        public static void  AddPatients(int patientId,string patientName,int age,string diagonsis)
+        public Patient(int patientId, string? patientName, int age, string? diagonsis)
         {
-            if(!(age>0 && age<120))
+            PatientId = patientId;
+            PatientName = patientName;
+            Age = age;
+            Diagonsis = diagonsis;
+        }
+
+        public static void  AddPatients(Patient p)
+        {
+            if(!(p.Age>0 && p.Age<120))
             {
                 throw new CustomException("Age must be between 1 and 119");
             }
-            if(String.IsNullOrEmpty(patientName))
+            if(String.IsNullOrEmpty(p.PatientName))
             {
                 throw new CustomException("patient Name cannot be null or empty");
             }
-            if(String.IsNullOrEmpty(diagonsis))
+            if(String.IsNullOrEmpty(p.Diagonsis))
             {
                 throw new CustomException("diagonsis cannot be null or empty");
             }
-            Patient patient = new Patient();
-            patient.PatientId = patientId;
-            patient.PatientName = patientName;
-            patient.Age = age;
-            patient.Diagonsis = diagonsis;
-            PatientList.Add(patient);
+           
+            PatientList.Add(p);
 
 
+        }
+        public void WritePatientDetailsToFile()
+        {
+            FileStream fileStream = new FileStream("C:\\Users\\Administrator\\Desktop\\FileOperations\\PatientRecord\\PatientDetails.txt", FileMode.Append, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(fileStream);
+            writer.WriteLine("Patient Id: {0} Patient Name: {1} Patient Age :{2} Diagonsis :{3}", PatientId, PatientName, Age, Diagonsis);
+            writer.Close();
+            fileStream.Close();
         }
         public static void Display()
         {
@@ -47,6 +59,16 @@ namespace Assignments
             {
                 Console.WriteLine("Patient Name:{0} Patient Age :{1} Diagonsis:{2}", patient.PatientName, patient.Age, patient.Diagonsis);
             }
+        }
+        public static void DisplayPatientDetailsFromFile()
+        {
+            FileStream fileStream = new FileStream("C:\\Users\\Administrator\\Desktop\\FileOperations\\PatientRecord\\PatientDetails.txt", FileMode.Open, FileAccess.Read);
+            StreamReader streamReader = new StreamReader(fileStream);
+            string str=streamReader.ReadToEnd();
+            Console.WriteLine(str);
+            streamReader.Close();
+            
+            
         }
     }
 }

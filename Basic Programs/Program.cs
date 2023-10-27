@@ -123,20 +123,29 @@ using Basic_Programs.ExceptionMessages;
 
 //26-10-2023
 
-ExceptionHandling exceptionHandling = new ExceptionHandling();
-exceptionHandling.NumberOne = 20;
-exceptionHandling.NumberTwo=0;
-exceptionHandling.Divide();
+//ExceptionHandling exceptionHandling = new ExceptionHandling();
+//exceptionHandling.NumberOne = 20;
+//exceptionHandling.NumberTwo=0;
+//exceptionHandling.Divide();
 
-try
-{
-    exceptionHandling.NumCheck();
-}
-catch(ArgumentException ex)
-{
-    Console.WriteLine(MyException.exMessagesList[4]);
-}
-catch(NumberOneException ex)
-{
-    Console.WriteLine(ex.Message);
-}
+//try
+//{
+//    exceptionHandling.NumCheck();
+//}
+//catch(ArgumentException ex)
+//{
+//    Console.WriteLine(MyException.exMessagesList[4]);
+//}
+//catch(NumberOneException ex)
+//{
+//    Console.WriteLine(ex.Message);
+//}
+
+//27-10-2023
+
+FileOperations fileOperations = new FileOperations();
+//fileOperations.CreateFile();
+//fileOperations.WriteData();
+//fileOperations.ReadData();
+//fileOperations.CopyMoveFile();
+fileOperations.DeleteFile();
