@@ -124,21 +124,21 @@ using Assignments.ExceptionMessage;
 
 //27-10-2023
 
-MedicalRecord medicalRecord = new MedicalRecord(123,"gokul",30,"fever",12,100);
 
-try
-{
-    MedicalRecord.AddMedicalRecord(medicalRecord);
-}
-catch (CustomException ex)
-{
-    Console.Write(ex.Message);
-}
+//MedicalRecord medicalRecord = new MedicalRecord(123,"gokul",30,"fever",12,100);
+
+//try
+//{
+//    MedicalRecord.AddMedicalRecord(medicalRecord);
+//}
+//catch (CustomException ex)
+//{
+//    Console.Write(ex.Message);
+//}
 int n = 1;
-
 while (n == 1)
 {
-    Console.WriteLine("1.Add Medical Record 2.View Medical Record Details");
+    Console.WriteLine("1.Add Medical Record 2.View Medical Record Details 3.Search patient");
     int choice = Convert.ToInt32(Console.ReadLine());
     switch (choice)
     {
@@ -157,6 +157,11 @@ while (n == 1)
             break;
         case 2:
             MedicalHistory.DisplayMedicalHistoryDetailsFromFile();
+            break;
+        case 3:
+            Console.WriteLine("Enter the Patient id");
+            string patientId=Console.ReadLine();
+            MedicalHistory.GetPatientFromFile(patientId);
             break;
     }
     Console.WriteLine("Press 1 to contine");

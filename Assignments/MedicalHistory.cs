@@ -29,7 +29,7 @@ namespace Assignments
         }
         public void WriteMedicalRecordDetailsToFile()
         {
-            FileStream fileStream = new FileStream("C:\\Users\\Administrator\\Desktop\\FileOperations\\PatientRecord\\MedicalRecordDetails.txt", FileMode.Create, FileAccess.Write);
+            FileStream fileStream = new FileStream("C:\\Users\\Administrator\\Desktop\\FileOperations\\PatientRecord\\MedicalRecordDetails.txt", FileMode.Append, FileAccess.Write);
             StreamWriter writer = new StreamWriter(fileStream);
             writer.WriteLine("Record Id: {0} Patient Id: {1} Description :{2} Time :{3}", RecordId, PatientId, Description, Time);
             writer.Close();
@@ -44,6 +44,24 @@ namespace Assignments
             streamReader.Close();
 
 
+        }
+        public static void GetPatientFromFile(string patientId)
+        {
+            FileStream fs = new FileStream("C:\\Users\\Administrator\\Desktop\\FileOperations\\PatientRecord\\MedicalRecordDetails.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            sr.BaseStream.Seek(0, SeekOrigin.Begin);
+            string str = sr.ReadLine();
+            while(str!=null)
+            {
+                if(str.Contains("Patient Id: "+patientId))
+                {
+                    Console.WriteLine(str);
+                }
+                str = sr.ReadLine();    
+            }
+            Console.WriteLine(str);
+            sr.Close();
+            fs.Close();
         }
 
 

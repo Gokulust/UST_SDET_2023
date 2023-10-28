@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basic Programs", "Basic Pro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignments", "Assignments\Assignments.csproj", "{A11118B8-0154-4093-A126-DFE61CF3DD24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseStudy", "CaseStudy\CaseStudy.csproj", "{C0AC9C9D-346C-46DF-B78A-535FA4BFF4DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaseStudy", "CaseStudy\CaseStudy.csproj", "{C0AC9C9D-346C-46DF-B78A-535FA4BFF4DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseStudy_E-Commerce", "CaseStudy_E-Commerce\CaseStudy_E-Commerce.csproj", "{2CA8DA1B-D239-4A11-80D2-A5E6A8127AE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C0AC9C9D-346C-46DF-B78A-535FA4BFF4DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0AC9C9D-346C-46DF-B78A-535FA4BFF4DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0AC9C9D-346C-46DF-B78A-535FA4BFF4DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CA8DA1B-D239-4A11-80D2-A5E6A8127AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CA8DA1B-D239-4A11-80D2-A5E6A8127AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CA8DA1B-D239-4A11-80D2-A5E6A8127AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CA8DA1B-D239-4A11-80D2-A5E6A8127AE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
