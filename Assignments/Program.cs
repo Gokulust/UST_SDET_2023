@@ -135,35 +135,42 @@ using Assignments.ExceptionMessage;
 //{
 //    Console.Write(ex.Message);
 //}
-int n = 1;
-while (n == 1)
-{
-    Console.WriteLine("1.Add Medical Record 2.View Medical Record Details 3.Search patient");
-    int choice = Convert.ToInt32(Console.ReadLine());
-    switch (choice)
-    {
-        case 1:
-            Console.WriteLine("Enter the Reord id:");
-            int recordId = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the Patient id:");
-            int patientid = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the Description:");
-            string description = Console.ReadLine();
-            Console.WriteLine("Enter the Time:");
-            double Time = Convert.ToDouble(Console.ReadLine());
-            MedicalHistory medicalHistory=new(recordId,patientid, description, Time);
-            MedicalHistory.AddMedicalRecord(medicalHistory);
-            medicalHistory.WriteMedicalRecordDetailsToFile();
-            break;
-        case 2:
-            MedicalHistory.DisplayMedicalHistoryDetailsFromFile();
-            break;
-        case 3:
-            Console.WriteLine("Enter the Patient id");
-            string patientId=Console.ReadLine();
-            MedicalHistory.GetPatientFromFile(patientId);
-            break;
-    }
-    Console.WriteLine("Press 1 to contine");
-    choice = Convert.ToInt32(Console.ReadLine());
-}
+//int n = 1;
+//while (n == 1)
+//{
+//    Console.WriteLine("1.Add Medical Record 2.View Medical Record Details 3.Search patient");
+//    int choice = Convert.ToInt32(Console.ReadLine());
+//    switch (choice)
+//    {
+//        case 1:
+//            Console.WriteLine("Enter the Reord id:");
+//            int recordId = Convert.ToInt32(Console.ReadLine());
+//            Console.WriteLine("Enter the Patient id:");
+//            int patientid = Convert.ToInt32(Console.ReadLine());
+//            Console.WriteLine("Enter the Description:");
+//            string description = Console.ReadLine();
+//            Console.WriteLine("Enter the Time:");
+//            double Time = Convert.ToDouble(Console.ReadLine());
+//            MedicalHistory medicalHistory=new(recordId,patientid, description, Time);
+//            MedicalHistory.AddMedicalRecord(medicalHistory);
+//            medicalHistory.WriteMedicalRecordDetailsToFile();
+//            break;
+//        case 2:
+//            MedicalHistory.DisplayMedicalHistoryDetailsFromFile();
+//            break;
+//        case 3:
+//            Console.WriteLine("Enter the Patient id");
+//            string patientId=Console.ReadLine();
+//            MedicalHistory.GetPatientFromFile(patientId);
+//            break;
+//    }
+//    Console.WriteLine("Press 1 to contine");
+//    choice = Convert.ToInt32(Console.ReadLine());
+//}
+
+//30-10-2023
+
+HotelRoom room = new(23, "single", true);
+RoomReservation<HotelRoom> reservation = new RoomReservation<HotelRoom>();
+reservation.BookRoom(room);
+reservation.CancelBooking(room);

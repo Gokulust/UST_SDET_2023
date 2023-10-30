@@ -19,21 +19,28 @@ namespace CaseStudy_E_Commerce
         public string?Name { get; set; }
         public string? Email { get; set; }
 
-        public static List<DigitalProduct> OrderDigitalProducts { get; set; }
+        public  List<DigitalProduct>CartDigitalProducts =new List<DigitalProduct>();
 
-        public static List<PhysicalProduct>OrderPhysicalProducts { get; set; }
+        public  List<PhysicalProduct>CartPhysicalProducts=new List<PhysicalProduct>();
 
-        public static void AddToCart(int Id)
+        public List<PhysicalProduct> OrderedPhysicalProducts = new List<PhysicalProduct>();
+
+        public  List<DigitalProduct> OrderedDigitalProducts = new List<DigitalProduct>();
+
+        public static List<Customer>CustomerList =new List<Customer>();
+
+        public  void AddToCart(int Id)
         {
             DigitalProduct Product=DigitalProduct.DigitalPRoductList.Find(x=>x.ProductId== Id);
+           
             if(Product!=null)
             {
-              Customer.OrderDigitalProducts.Add(Product);
+              CartDigitalProducts.Add(Product);
             }
             PhysicalProduct physicalProduct=PhysicalProduct.physicalProductList.Find(x=>x.ProductId== Id);  
             if(physicalProduct!=null)
             {
-                Customer.OrderPhysicalProducts.Add(physicalProduct);
+                CartPhysicalProducts.Add(physicalProduct);
             }
         }
 

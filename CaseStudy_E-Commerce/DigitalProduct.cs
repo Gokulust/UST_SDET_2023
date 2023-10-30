@@ -13,5 +13,18 @@ namespace CaseStudy_E_Commerce
 
         public static  List<DigitalProduct>DigitalPRoductList=new List<DigitalProduct>();
 
+        
+
+        public static double CalculateCost(List<DigitalProduct>digitalProductsList)
+        {
+            double totalCost = 0;
+            foreach (var physicalProduct in digitalProductsList)
+            {
+                totalCost += physicalProduct.StockQuantity * physicalProduct.ProductPrice;
+            }
+            return totalCost;
+
+        }
+
     }
 }

@@ -143,9 +143,18 @@ using Basic_Programs.ExceptionMessages;
 
 //27-10-2023
 
-FileOperations fileOperations = new FileOperations();
+//FileOperations fileOperations = new FileOperations();
 //fileOperations.CreateFile();
 //fileOperations.WriteData();
 //fileOperations.ReadData();
 //fileOperations.CopyMoveFile();
-fileOperations.DeleteFile();
+//fileOperations.DeleteFile();
+
+//30-10-2023
+
+GenericExample<int> g1 = new GenericExample<int>(10, 20);
+Console.WriteLine(g1.ValueOne + " " + g1.ValueTwo1);
+GenericExample<double>d1= new GenericExample<double>(10.5, 20.5);
+Console.WriteLine(d1.ValueOne+" "+d1.ValueTwo1);
+GenericExample<int> a1=new GenericExample<int>(new int[2] {2,3});
+a1.Display();
