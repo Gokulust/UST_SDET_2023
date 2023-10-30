@@ -169,8 +169,16 @@ using Assignments.ExceptionMessage;
 //}
 
 //30-10-2023
-
-HotelRoom room = new(23, "single", true);
+Console.WriteLine("Enter the Room number:");
+int roomNumber=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the Room Type");
+string roomType=Console.ReadLine();
+Console.Write("Enter the Room Status");
+bool status=Convert.ToBoolean(Console.ReadLine());
+HotelRoom room = new(roomNumber,roomType,status);
 RoomReservation<HotelRoom> reservation = new RoomReservation<HotelRoom>();
 reservation.BookRoom(room);
-reservation.CancelBooking(room);
+Console.WriteLine("Enter the room number to Cancel booking");
+int cnumber=Convert.ToInt32(Console.ReadLine());
+HotelRoom isRoom=RoomReservation<HotelRoom>.HotelRooms.Find(x=>x.RoomNumber== cnumber);
+reservation.CancelBooking(isRoom);
