@@ -169,16 +169,45 @@ using Assignments.ExceptionMessage;
 //}
 
 //30-10-2023
-Console.WriteLine("Enter the Room number:");
-int roomNumber=Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter the Room Type");
-string roomType=Console.ReadLine();
-Console.Write("Enter the Room Status");
-bool status=Convert.ToBoolean(Console.ReadLine());
-HotelRoom room = new(roomNumber,roomType,status);
-RoomReservation<HotelRoom> reservation = new RoomReservation<HotelRoom>();
-reservation.BookRoom(room);
-Console.WriteLine("Enter the room number to Cancel booking");
-int cnumber=Convert.ToInt32(Console.ReadLine());
-HotelRoom isRoom=RoomReservation<HotelRoom>.HotelRooms.Find(x=>x.RoomNumber== cnumber);
-reservation.CancelBooking(isRoom);
+//Console.WriteLine("Enter the Room number:");
+//int roomNumber=Convert.ToInt32(Console.ReadLine());
+//Console.WriteLine("Enter the Room Type");
+//string roomType=Console.ReadLine();
+//Console.Write("Enter the Room Status");
+//bool status=Convert.ToBoolean(Console.ReadLine());
+//HotelRoom room = new(roomNumber,roomType,status);
+//RoomReservation<HotelRoom> reservation = new RoomReservation<HotelRoom>();
+//reservation.BookRoom(room);
+//Console.WriteLine("Enter the room number to Cancel booking");
+//int cnumber=Convert.ToInt32(Console.ReadLine());
+//HotelRoom isRoom=RoomReservation<HotelRoom>.HotelRooms.Find(x=>x.RoomNumber== cnumber);
+//reservation.CancelBooking(isRoom);
+
+//31-10-2023
+class Program
+{
+    public delegate double DelegateOne(EmployeeNew employee);
+    public delegate string DelegateTwo(string msg);
+    public static void Main(string[] args)
+    {
+        EmployeeNew employee = new(12, "gokul", 4);
+        EmployeeNew employeeTwo = new(13, "vishnu", 2);
+        DelegateOne del = EmployeeNew.BonusCalculation;
+        DelegateOne del2 = EmployeeNew.BonusCalculationAccount;
+        Console.WriteLine(del(employee));
+        Console.WriteLine(del2(employeeTwo));
+        HotelEvent hotelEvent = new("Foundation Day", "23-10-2023", "UST", 7000);
+        DelegateTwo del3 = HotelEvent.SentNotification;
+        if(hotelEvent!=null)
+
+        {
+            Console.WriteLine(del3("Event Registered Successfully"));
+        }
+        else
+        {
+            Console.WriteLine(del3("Event Not Registered Successfully"));
+        }
+       
+    }
+}
+

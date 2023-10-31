@@ -2,6 +2,7 @@
 
 using Basic_Programs;
 using Basic_Programs.ExceptionMessages;
+using System.Security.Cryptography.X509Certificates;
 
 //18-10-2023
 
@@ -152,9 +153,33 @@ using Basic_Programs.ExceptionMessages;
 
 //30-10-2023
 
-GenericExample<int> g1 = new GenericExample<int>(10, 20);
-Console.WriteLine(g1.ValueOne + " " + g1.ValueTwo1);
-GenericExample<double>d1= new GenericExample<double>(10.5, 20.5);
-Console.WriteLine(d1.ValueOne+" "+d1.ValueTwo1);
-GenericExample<int> a1=new GenericExample<int>(new int[2] {2,3});
-a1.Display();
+//GenericExample<int> g1 = new GenericExample<int>(10, 20);
+//Console.WriteLine(g1.ValueOne + " " + g1.ValueTwo1);
+//GenericExample<double>d1= new GenericExample<double>(10.5, 20.5);
+//Console.WriteLine(d1.ValueOne+" "+d1.ValueTwo1);
+//GenericExample<int> a1=new GenericExample<int>(new int[2] {2,3});
+//a1.Display();
+
+//31-10-2023
+
+
+public delegate void DelegateOne();
+public delegate void DelegateTwo(int num1,int num2);
+class Program
+{
+    
+    public static DelegateOne MethodA;
+    public static void Main(string[] args)
+    {
+       
+        DelegateOne del = MethodA;
+       
+        DelegateExample delobj= new DelegateExample();
+        DelegateTwo del2 = delobj.Add;
+        del2(2,3);
+        DelegateTwo del3 = delobj.Sub;
+        del3(5, 2);
+        DelegateTwo dobjallop = del2 + del3;
+        dobjallop(10, 2);
+    }
+}
