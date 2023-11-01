@@ -184,30 +184,59 @@ using Assignments.ExceptionMessage;
 //reservation.CancelBooking(isRoom);
 
 //31-10-2023
-class Program
-{
-    public delegate double DelegateOne(EmployeeNew employee);
-    public delegate string DelegateTwo(string msg);
-    public static void Main(string[] args)
-    {
-        EmployeeNew employee = new(12, "gokul", 4);
-        EmployeeNew employeeTwo = new(13, "vishnu", 2);
-        DelegateOne del = EmployeeNew.BonusCalculation;
-        DelegateOne del2 = EmployeeNew.BonusCalculationAccount;
-        Console.WriteLine(del(employee));
-        Console.WriteLine(del2(employeeTwo));
-        HotelEvent hotelEvent = new("Foundation Day", "23-10-2023", "UST", 7000);
-        DelegateTwo del3 = HotelEvent.SentNotification;
-        if(hotelEvent!=null)
+//class Program
+//{
+//    public delegate double DelegateOne(EmployeeNew employee);
+//    public delegate string DelegateTwo(string msg);
+//    public static void Main(string[] args)
+//    {
+//        EmployeeNew employee = new(12, "gokul", 4);
+//        EmployeeNew employeeTwo = new(13, "vishnu", 2);
+//        DelegateOne del = EmployeeNew.BonusCalculation;
+//        DelegateOne del2 = EmployeeNew.BonusCalculationAccount;
+//        Console.WriteLine(del(employee));
+//        Console.WriteLine(del2(employeeTwo));
+//        HotelEvent hotelEvent = new("Foundation Day", "23-10-2023", "UST", 7000);
+//        DelegateTwo del3 = HotelEvent.SentNotification;
+//        if(hotelEvent!=null)
 
-        {
-            Console.WriteLine(del3("Event Registered Successfully"));
-        }
-        else
-        {
-            Console.WriteLine(del3("Event Not Registered Successfully"));
-        }
-       
+//        {
+//            Console.WriteLine(del3("Event Registered Successfully"));
+//        }
+//        else
+//        {
+//            Console.WriteLine(del3("Event Not Registered Successfully"));
+//        }
+
+//    }
+//}
+
+//1-11-2023
+
+TourismDestination tourismDestination = new("kanakkakunn", "India", 3,900);
+TourismDestination tourismDestination2 = new("ponmudi", "India", 4,5000);
+TourismDestination tourismDestination3 = new("neyyar dam", "India", 2,890);
+TourismDestination tourismDestination4 = new("pattaya", "tailand", 1,500);
+TourismDestination tourismDestination5 = new("Eiffel Tower", "Uk", 5, 60000);
+TourismDestination.TourismDestinationsList.Add(tourismDestination);
+TourismDestination.TourismDestinationsList.Add(tourismDestination2);
+TourismDestination.TourismDestinationsList.Add(tourismDestination3);
+TourismDestination.TourismDestinationsList.Add(tourismDestination4);
+var sortedDestination = TourismDestination.ViewSortedDestination();
+Display(sortedDestination);
+var sortedDestionationhavingratinggreaterthan3 = TourismDestination.SortDestinationAboveSpecificRating();
+Display(sortedDestionationhavingratinggreaterthan3);
+var sortByPrice=TourismDestination.SortByPrice();
+Display(sortByPrice);
+var searchByCountry = TourismDestination.SearchByCountry("tailand");
+Console.WriteLine("Rating : {0} Name :{1} Country : {2} PricePerNight:{3}", searchByCountry.Rating, searchByCountry.Name, searchByCountry.Country,searchByCountry.PricePerNight);
+
+void Display(List<TourismDestination> destinations)
+{
+    foreach (var destination in destinations)
+    {
+        Console.WriteLine("Rating : {0} Name :{1} Country : {2} PricePerNight: {3}", destination.Rating, destination.Name, destination.Country,destination.PricePerNight);
     }
 }
+
 
