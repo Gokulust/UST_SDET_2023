@@ -213,30 +213,43 @@ using Assignments.ExceptionMessage;
 
 //1-11-2023
 
-TourismDestination tourismDestination = new("kanakkakunn", "India", 3,900);
-TourismDestination tourismDestination2 = new("ponmudi", "India", 4,5000);
-TourismDestination tourismDestination3 = new("neyyar dam", "India", 2,890);
-TourismDestination tourismDestination4 = new("pattaya", "tailand", 1,500);
-TourismDestination tourismDestination5 = new("Eiffel Tower", "Uk", 5, 60000);
-TourismDestination.TourismDestinationsList.Add(tourismDestination);
-TourismDestination.TourismDestinationsList.Add(tourismDestination2);
-TourismDestination.TourismDestinationsList.Add(tourismDestination3);
-TourismDestination.TourismDestinationsList.Add(tourismDestination4);
-var sortedDestination = TourismDestination.ViewSortedDestination();
-Display(sortedDestination);
-var sortedDestionationhavingratinggreaterthan3 = TourismDestination.SortDestinationAboveSpecificRating();
-Display(sortedDestionationhavingratinggreaterthan3);
-var sortByPrice=TourismDestination.SortByPrice();
-Display(sortByPrice);
-var searchByCountry = TourismDestination.SearchByCountry("tailand");
-Console.WriteLine("Rating : {0} Name :{1} Country : {2} PricePerNight:{3}", searchByCountry.Rating, searchByCountry.Name, searchByCountry.Country,searchByCountry.PricePerNight);
+//TourismDestination tourismDestination = new("kanakkakunn", "India", 3,900);
+//TourismDestination tourismDestination2 = new("ponmudi", "India", 4,5000);
+//TourismDestination tourismDestination3 = new("neyyar dam", "India", 2,890);
+//TourismDestination tourismDestination4 = new("pattaya", "tailand", 1,500);
+//TourismDestination tourismDestination5 = new("Eiffel Tower", "Uk", 5, 60000);
+//TourismDestination.TourismDestinationsList.Add(tourismDestination);
+//TourismDestination.TourismDestinationsList.Add(tourismDestination2);
+//TourismDestination.TourismDestinationsList.Add(tourismDestination3);
+//TourismDestination.TourismDestinationsList.Add(tourismDestination4);
+//TourismDestination.TourismDestinationsList.Add(tourismDestination5);
+//var sortedDestination = TourismDestination.ViewSortedDestination();
+//Display(sortedDestination);
+//var sortedDestionationhavingratinggreaterthan3 = TourismDestination.SortDestinationAboveSpecificRating();
+//Display(sortedDestionationhavingratinggreaterthan3);
+//var sortByPrice=TourismDestination.SortByPrice();
+//Display(sortByPrice);
+//var searchByCountry = TourismDestination.SearchByCountry("tailand");
+//Console.WriteLine("Rating : {0} Name :{1} Country : {2} PricePerNight:{3}", searchByCountry.Rating, searchByCountry.Name, searchByCountry.Country,searchByCountry.PricePerNight);
 
-void Display(List<TourismDestination> destinations)
-{
-    foreach (var destination in destinations)
-    {
-        Console.WriteLine("Rating : {0} Name :{1} Country : {2} PricePerNight: {3}", destination.Rating, destination.Name, destination.Country,destination.PricePerNight);
-    }
-}
+//void Display(List<TourismDestination> destinations)
+//{
+//    foreach (var destination in destinations)
+//    {
+//        Console.WriteLine("Rating : {0} Name :{1} Country :{2} PricePerNight:{3}", destination.Rating, destination.Name, destination.Country,destination.PricePerNight);
+//    }
+//}
+
+//2-11-2023
+Hotel hotel1 = new("effiel tower", "India", 3, 500, "5star", 10);
+var tasks = new Task<bool>[] { hotel1.HotelBooking(5) ,hotel1.HotelBooking(3),hotel1.HotelBooking(5)};
+await Task.WhenAll(tasks);
+Console.WriteLine("All Booking Processed");
+
+TourPackage package = new TourPackage(1, "Kochi", "12-10-2938", 13000);
+TourPackage tourPackage1 = new TourPackage(2, "tvm", "23-10-2023", 23000);
+
+
+
 
 

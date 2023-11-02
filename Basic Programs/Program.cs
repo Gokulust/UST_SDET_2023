@@ -162,24 +162,28 @@ using System.Security.Cryptography.X509Certificates;
 
 //31-10-2023
 
+//public delegate void DelegateOne();
+//public delegate void DelegateTwo(int num1,int num2);
+//class Program
+//{
 
-public delegate void DelegateOne();
-public delegate void DelegateTwo(int num1,int num2);
-class Program
-{
-    
-    public static DelegateOne MethodA;
-    public static void Main(string[] args)
-    {
-       
-        DelegateOne del = MethodA;
-       
-        DelegateExample delobj= new DelegateExample();
-        DelegateTwo del2 = delobj.Add;
-        del2(2,3);
-        DelegateTwo del3 = delobj.Sub;
-        del3(5, 2);
-        DelegateTwo dobjallop = del2 + del3;
-        dobjallop(10, 2);
-    }
-}
+//    public static DelegateOne MethodA;
+//    public static void Main(string[] args)
+//    {
+
+//        DelegateOne del = MethodA;
+
+//        DelegateExample delobj= new DelegateExample();
+//        DelegateTwo del2 = delobj.Add;
+//        del2(2,3);
+//        DelegateTwo del3 = delobj.Sub;
+//        del3(5, 2);
+//        DelegateTwo dobjallop = del2 + del3;
+//        dobjallop(10, 2);
+//    }
+//}
+
+//2-11-2023
+
+//ThreadsExample.ThreadEx();
+//AsyncAwait.Example();
