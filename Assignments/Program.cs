@@ -269,12 +269,11 @@ TaskItem.UpdateTask(14);
 
 TaskItem.Display();
 
-static void Main()
-    {
-        FamilyMember rootFamilyMember = BuildFamilyTree();
-        Console.WriteLine("Family Tree:");
-        rootFamilyMember.DisplayFamily();
-    }
+
+FamilyMember rootFamilyMember = BuildFamilyTree();
+Console.WriteLine("Family Tree:");
+rootFamilyMember.DisplayFamily();
+   
 
     static FamilyMember BuildFamilyTree()
     {
