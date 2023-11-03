@@ -269,6 +269,33 @@ TaskItem.UpdateTask(14);
 
 TaskItem.Display();
 
+static void Main()
+    {
+        FamilyMember rootFamilyMember = BuildFamilyTree();
+        Console.WriteLine("Family Tree:");
+        rootFamilyMember.DisplayFamily();
+    }
+
+    static FamilyMember BuildFamilyTree()
+    {
+        // Create family members
+        FamilyMember grandparent = new FamilyMember("Grandparent", 70);
+        FamilyMember parent1 = new FamilyMember("Parent 1", 40);
+        FamilyMember parent2 = new FamilyMember("Parent 2", 38);
+        FamilyMember child1 = new FamilyMember("Child 1", 12);
+        FamilyMember child2 = new FamilyMember("Child 2", 10);
+        FamilyMember child3 = new FamilyMember("Child 3", 8);
+
+        // Build family tree by specifying parent-child relationships
+        grandparent.AddChild(parent1);
+        grandparent.AddChild(parent2);
+        parent1.AddChild(child1);
+        parent1.AddChild(child2);
+        parent2.AddChild(child3);
+
+        return grandparent;  // Return the root of the family tree
+    }
+
 
 
 
