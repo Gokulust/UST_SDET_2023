@@ -241,13 +241,33 @@ using Assignments.ExceptionMessage;
 //}
 
 //2-11-2023
-Hotel hotel1 = new("effiel tower", "India", 3, 500, "5star", 10);
-var tasks = new Task<bool>[] { hotel1.HotelBooking(5) ,hotel1.HotelBooking(3),hotel1.HotelBooking(5)};
-await Task.WhenAll(tasks);
-Console.WriteLine("All Booking Processed");
+//Hotel hotel1 = new("effiel tower", "India", 3, 500, "5star", 10);
+//var tasks = new Task<bool>[] { hotel1.HotelBooking(5) ,hotel1.HotelBooking(3),hotel1.HotelBooking(5)};
+//await Task.WhenAll(tasks);
+//Console.WriteLine("All Booking Processed");
 
-TourPackage package = new TourPackage(1, "Kochi", "12-10-2938", 13000);
-TourPackage tourPackage1 = new TourPackage(2, "tvm", "23-10-2023", 23000);
+//TourPackage package = new TourPackage(1, "Kochi", "12-10-2938", 13000);
+//TourPackage tourPackage1 = new TourPackage(2, "tvm", "23-10-2023", 23000);
+
+//3-11-2023
+
+TaskItem taskItem1 = new(12, "study", false);
+TaskItem taskItem2 = new(13, "workout", true);
+TaskItem taskItem3 = new(14, "Reading Books", false);
+
+TaskItem.AddTask(taskItem1);
+TaskItem.AddTask(taskItem2);
+TaskItem.AddTask(taskItem3);
+
+TaskItem.Display();
+
+TaskItem.RemoveTask(taskItem1);
+
+TaskItem.Display();
+
+TaskItem.UpdateTask(14);
+
+TaskItem.Display();
 
 
 

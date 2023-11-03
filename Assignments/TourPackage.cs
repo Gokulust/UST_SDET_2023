@@ -15,7 +15,7 @@ namespace Assignments
 
         public decimal Price { get; set; }
 
-        static object bookinglock=new object();
+       
 
         public TourPackage(int packageId, string? destination, string startDate, decimal price)
         {
@@ -25,22 +25,22 @@ namespace Assignments
             Price = price;
         }
 
-        static void BookPackage(TourPackage package)
-        {
-            Console.WriteLine("Enter the id to book");
-            int a=Convert.ToInt32(package.Destination);
-            lock(TourPackages) {
-                var pack = TourPackages.Find(x= x.PackageId == a);
-                Console.WriteLine("Booking request For BookingId:{0} to {1} Starting On {2}", pack.PackageId, pack.Destination, pack.StartDate);
-                Thread.Sleep(2000);
-                Console.WriteLine("Booking Confirmed");
+        //static void BookPackage(TourPackage package)
+        //{
+        //    Console.WriteLine("Enter the id to book");
+        //    int a=Convert.ToInt32(package.Destination);
+        //    lock(TourPackages) {
+        //        var pack = TourPackages.Find(x= x.PackageId == a);
+        //        Console.WriteLine("Booking request For BookingId:{0} to {1} Starting On {2}", pack.PackageId, pack.Destination, pack.StartDate);
+        //        Thread.Sleep(2000);
+        //        Console.WriteLine("Booking Confirmed");
 
-            }
+        //    }
             
                 
             
             
-        }
+        //}
 
     }
   
